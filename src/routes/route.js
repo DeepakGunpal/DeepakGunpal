@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/test-me', function (req, res) {
     console.log('I am inside the first route')
-    logger.welcome()
+    logger.log()
     console.log('Current Date is ' + helper.printDate)
     console.log('Current Month is ' + helper.printMonth)
     helper.getBatchInfo()

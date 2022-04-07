@@ -39,7 +39,7 @@ console.log(num)
 
 //- Use the function fromPairs to create an object containing key value pairs. For example [“horror”,”The Shining"],[“drama”,”Titanic"],[“thriller”,”Shutter Island"],[“fantasy”,”Pans Labyrinth"]
 
-const pairs = [["horror","The Shining"],["drama","Titanic"],["thriller","Shutter Island"],["fantasy”","Pans Labyrinth"]]
+const pairs = [["horror","The Shining"],["drama","Titanic"],["thriller","Shutter Island"],["fantasy","Pans Labyrinth"]]
 const keyValue = _.fromPairs(pairs)
 console.log(keyValue)
 
