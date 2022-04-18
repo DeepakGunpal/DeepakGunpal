@@ -1,12 +1,9 @@
-const batchModel= require("../models/batchModel")
+const batchModel = require("../models/batchModel");
 
+const createBatch = async function (req, res) {
+  const branch = req.body;
+  let branchCreate = await batchModel.create(branch);
+  res.send({ data: branchCreate });
+};
 
-const createBranch = async function (req, res) {
-    const branch = req.body
-    let branchCreate = await batchModel.create(branch)
-    res.send({data: branchCreate})
-}
-
-
-module.exports.createBranch = createBranch
-
+module.exports.createBatch = createBatch;
