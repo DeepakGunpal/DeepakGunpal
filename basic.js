@@ -17,12 +17,14 @@ var arr = [] // time complexity (c) constant time
 arr = [1,2,5,7,9,10,20,22] //(8c)
 
 //even number divided by 2
-let even_count = 0
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i]%2==0) {
-        even_count++
-    }
-    
-}
 
+let even_count = 0 //c
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i]%2==0) {  //c
+        even_count++  //2c
+    }    
+}
+//total time complexity => c + loop(c + 2c) => c + loop(3c) => c + no. of time loop runs(in our case arr.length) * 3c => c + 8 * 3c => 25c
+
+//array size of n => c + n*2c => c + 2nc => c(2n + 1)
 console.log(even_count)
