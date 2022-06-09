@@ -18,3 +18,14 @@ let BetterSum = (n * (n + 1)) / 2
 console.log(BetterSum)
 
 //time complexity = O(1) 
+
+//space complexity
+
+//swap two numbers a and b
+
+let a = 23
+let b = 78
+// a = 78  b = 23
+temp = a //temp = 23
+a = b // a = 78
+b = temp // b = 23
