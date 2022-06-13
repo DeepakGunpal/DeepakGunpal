@@ -14,17 +14,25 @@ var arr = [] // time complexity (c) constant time
 
 // we need to calculate total even number in array
 
-arr = [1,2,5,7,9,10,20,22] //(8c)
+arr = [1, 2, 5, 7, 9, 10, 20, 22] //(8c)
 
 //even number divided by 2
 
 let even_count = 0 //c
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i]%2==0) {  //c
+    if (arr[i] % 2 == 0) {  //c
         even_count++  //2c
-    }    
+    }
 }
 //total time complexity => c + loop(c + 2c) => c + loop(3c) => c + no. of time loop runs(in our case arr.length) * 3c => c + 8 * 3c => 25c
 
 //array size of n => c + n*2c => c + 2nc => c(2n + 1)
 console.log(even_count)
+
+// what is big O?
+// Big O is process to define how the program performs as the input grows
+//big O is the worst case scenario rather than average or best case scenario
+
+// two important
+// constant dont matters
+// 
