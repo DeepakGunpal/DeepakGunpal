@@ -1,3 +1,4 @@
+// document.querySelector('h1').innerHTML = " <b>Namaste Javascript</b>"
 const timer = document.querySelector('#time span');
 
 // setInterval(() => {
@@ -29,7 +30,7 @@ const jsondata = document.querySelector('#jsondata')
 function getMeAPromise() {
     //fetch allows you to make network request
     // return fetch('http://127.0.0.1:5500/data.json'); //fullfilled promise
-    return fetch('./data.json'); //fullfilled promise
+    return fetch('data.json'); //fullfilled promise
     // return fetch('http://isg54545sg.com'); //rejected promise
 }
 
@@ -41,7 +42,7 @@ function getMeAPromise() {
 const promise = getMeAPromise()
 
 // promise.then(result => {
-//     jsondata.innerText = result['url'];
+//     // jsondata.innerText = result['url'];
 //     console.log("got result", result);
 // }).catch((error) => {
 //     console.log("promise failed", error)
@@ -53,21 +54,22 @@ const promise = getMeAPromise()
 //     console.log('Got data', data)
 //     console.log('my JSON data = ')// this is also a promise
 
-//     // data.json().then((finalData) => {
-//     //     console.log('Finally ', finalData)
-//     // })
-//     //*this will work fine but it will create callback hell
-//     //*i.e. why we have multiple .then option to make promises flat
+//     data.json().then((finalData) => {
+//         console.log('Finally ', finalData)
+
+//     })
+//     // //*this will work fine but it will create callback hell
+//     // //*i.e. why we have multiple .then option to make promises flat
 //     return data.json()
 // })
 //     .then((finalData) => {
 //         console.log('Finally ', finalData)
 //     })
 //     .then(() => {
-//         // return undefined
+//         return undefined
 //     })
 //     .then(() => {
-//         // return undefined
+//         return undefined
 //     })
 //     .then(() => {
 //         console.log("From 5th dot then")
@@ -90,11 +92,7 @@ const promise = getMeAPromise()
 //         throw new Error('Namaste, I am Error💀👺💀')
 //         //*if in a chain of promises one promise throws error then next promises wont work
 //     })
-//     // //*if you want to handle every single error separately then you need multiple catches
-//     // .catch(error => {
-//     //     console.log('OMG, there is an error😱😰😱')
-//     //     //*once error is handled in catch it is neutrilized rest of the code will work fine
-//     // })
+
 //     .then((data3) => {
 //         console.log('Passed 4')
 //     })
@@ -109,7 +107,7 @@ const promise = getMeAPromise()
 //         console.log('Muje kya mai toh batak hu🦆🦆')
 //     })
 
-// //* this is the callback function which will execute after 1 second
+//* this is the callback function which will execute after 1 second
 // setTimeout(() => {
 //     timer.innerText = "Look at the bottom right corner of your screen"
 // }, 1000)
@@ -123,28 +121,29 @@ function promiseSetTimeout() {
     // function fn(resolve, reject) {
     //     //* do whatever you want
 
-    //     resolve()
-    //     reject()
+    //     resolve(100)
+    //     // reject()
     // }
 
     // new Promise(fn)
 
-    //* alternative way
+    // //* alternative way
 
-    return new Promise((resolve, reject) => {
-        // resolve(100)
-        // reject(100)
+    // return new Promise((resolve, reject) => {
+    //     // resolve(100)
+    //     // reject(100)
+    //     // console.log(100)
 
-        setTimeout(() => {
-            timer.innerText = "Look at the bottom right corner of your screen"
-            resolve()
-            reject() //!what if write both resolve and reject
-        }, 1000)
+    //     setTimeout(() => {
+    //         timer.innerText = "Look at the bottom right corner of your screen"
+    //         resolve()
+    //         reject() //!what if write both resolve and reject
+    //     }, 1000)
 
-    })
+    // })
 
     //*if just need promise then you can also use simpler syntax such as
-    //  return Promise.resolve("Namaste, I am resolved Promise")
+    return Promise.resolve("Namaste, I am resolved Promise")
     // return Promise.reject("Namaste, I am rejected Promise")
 }
 
@@ -271,15 +270,22 @@ async function fetchData() {
     try {
         // const response = await Promise.all(promise.map(t => t.json()))
 
-        const successResponse = promise.filter(promise => {
-            return promise.status === "fulfilled"
-        }).map(promise => promise.value)
+        // const successResponse = promise.filter(promise => {
+        //     return promise.status === "fulfilled"
+        // }).map(promise => promise.value)
 
-        const response = await Promise.all(successResponse.map(t => t.json()))
+        // const response = await Promise.all(successResponse.map(t => t.json()))
         // console.log(promise)
-        console.log(response)
+        // console.log(response)
+        throw new Error('error in 1st try')
     } catch (error) {
         console.log('Promise.all sab ko le dooba', error)
+    }
+    try {
+        console.log("working after catch")
+        throw new Error('error in 2nd try')
+    } catch (err) {
+        console.log("error after catch")
     }
 
 }
