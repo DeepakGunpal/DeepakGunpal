@@ -9,8 +9,9 @@ const passport = require("passport");
 
 
 
-app.use(cors())
-
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.set("trust proxy", 1);
 
 app.use(
@@ -32,9 +33,9 @@ app.use(passport.session());
 
 const PORT = process.env.PORT || 4000
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true
+mongoose.connect("mongodb+srv://DeepakGunpal:hdg5NWwcvf2wUDTN@deepakcluster0.hynna.mongodb.net", {
+  useNewUrlParser: true
 })
-    .then(() => app.listen(PORT, () => console.log(`Live on ${PORT}`)))
+  .then(() => app.listen(PORT, () => console.log(`Live on ${PORT}`)))
 
 app.use('/', router)

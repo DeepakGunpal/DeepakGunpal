@@ -2,7 +2,7 @@ const fileModel = require('../models/fileModel')
 
 const uploadFile = async (req, res) => {
   try {
-
+    console.log('hello')
     const filedata = await fileModel.create({ file: req.file.filename })
     res.status(200).send({ sttaus: true, message: 'file data', data: filedata })
 

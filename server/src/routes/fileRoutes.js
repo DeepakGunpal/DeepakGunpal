@@ -3,8 +3,8 @@ const express = require('express')
 const app = express()
 const router = express.Router()
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+// app.use(express.json())
+// app.use(express.urlencoded({ extended: true }))
 
 const multer = require('multer')
 
