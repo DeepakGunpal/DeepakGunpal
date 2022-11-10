@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import axios from 'axios'
 
 class FileUpload {
@@ -14,3 +15,17 @@ class FileUpload {
 }
 
 export default new FileUpload()
+=======
+// import axios from  'axios'
+// const url = 'http://localhost:4000/';
+
+
+// class FileUpload {
+//     async create (formData) {
+   
+//          const response = await axios.post(url+'upload', formData)
+//          return response
+//      }
+//  }
+//  export default new FileUpload()
+>>>>>>> 03eeb6028d994157da799f106a39fc4d1d151a04
