@@ -4,14 +4,14 @@ import { download } from '../../data/api'
 
 // import { saveAs } from 'file-saver'
 
-export const DownloadFile = (e)=>{
-    const [url , setUrl] = useState('')
+export const DownloadFile = ()=>{
+    const [url, setUrl] = useState('')
     // e.prevent
 
     return (
         <div>
             <input value= {url} onChange ={(e)=>{setUrl(e.target.value)}}/>
-            <button type="button" className="btn btn-warning mt-4" onClick={download} >Download</button>
+            <button type="submit" className="btn btn-warning mt-4" onClick={download} >Download File</button>
         </div>
     )
 }

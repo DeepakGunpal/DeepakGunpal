@@ -14,17 +14,18 @@ const uploadFile = async (req, res) => {
 }
 
 
-const getAllFiles = async(req,res)=>{
+const getAllFiles = async (req, res) => {
   try {
     const allFiles = await fileModel.find()
     res.status(200).send(allFiles)
-    
+
   } catch (error) {
     res.status(400).send(error.message)
   }
 }
 
 
+console.log(process.cwd(), "&&", __dirname)
 const downloadFile = async (req, res) => {
   try {
     // let file = req.params.file;
@@ -34,7 +35,8 @@ const downloadFile = async (req, res) => {
     // console.log(fileLocation);
     // res.download(fileLocation, file);
 
-    res.status(200).download(files);
+    // res.status(200).download(files);
+    res.sendFile(`${process.cwd()}/uploads/781_iskcon_radha_krishna_09.jpg`)
 
   } catch (error) {
     res.status(400).send(error.message);

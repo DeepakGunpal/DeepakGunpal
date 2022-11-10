@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-// import  FileServices from '../../Services/FileServices'
+import  FileServices from '../../Services/FileServices'
 import './UploadFile.css'
 import {singleFile} from '../../data/api'
 
@@ -24,16 +24,11 @@ export default function UploadFile() {
 
   return (
     <div className='file-uploader-box'>
-      <h1 class='heading'>File Uploader</h1>
-        <form class ='form' onSubmit={handleSubmit}>
+      <h1 className='heading'>File Uploader</h1>
+        <form className ='form' onSubmit={handleSubmit}>
             <input type="file" name='file' onChange={event => setFile(event.target.files[0])} required/>
-        <button type='button' class="btn-primary">Upload</button>
+        <button type='button' className="btn-primary">Upload</button>
         </form>
-
-
-
-
-
     </div>
   )
 }
